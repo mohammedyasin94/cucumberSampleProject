@@ -1,0 +1,33 @@
+package stepDefinations;
+
+import org.openqa.selenium.WebDriver;
+
+import PageObject.loginPage;
+import io.cucumber.java.en.*;
+
+public class steps{
+	
+	public WebDriver driver;
+	public loginPage lp;
+
+	@Given("Open browser")
+	public void open_browser() 
+	{
+		lp=new loginPage(driver);
+	   
+	}
+
+	@When("I input {string} and {string}")
+	public void i_input_and(String userName, String password) 
+	{
+		
+	}
+
+	@Then("Driver Close")
+	public void driver_Close() 
+	{
+	  lp.clickLogin();
+	}
+
+
+}

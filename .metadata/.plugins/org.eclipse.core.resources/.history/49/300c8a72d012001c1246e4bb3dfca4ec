@@ -1,0 +1,62 @@
+package stepDefinations;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import PageObject.addTobag_Page;
+import PageObject.loginPage;
+import io.cucumber.java.en.*;
+import junit.framework.Assert;
+
+public class steps{
+	
+	public WebDriver driver;
+	public loginPage lp;
+	public addTobag_Page addp;
+
+	@Given("Open browser with {string}")
+	public void open_browser_with(String url)
+	{
+		System.setProperty("webdriver.chrome.driver","/Users/apple/BDDcucumberProject/BDDcucumber/drivers/chromedriver 2");
+		driver=new ChromeDriver();
+		lp=new loginPage(driver);
+		driver.get(url);   
+	}
+
+	@When("I input {string} and {string}")
+	public void i_input_and(String userName, String password) throws Exception 
+	{
+		lp.setuserName(userName);
+		lp.setPassword(password);
+		Thread.sleep(3000);
+		lp.clickLogin();
+	}
+
+	@Then("Driver Close")
+	public void driver_Close() 
+	{
+	  driver.close();
+	}
+	
+	@SuppressWarnings("deprecation")
+	@Given("User login to homepage to verify homepage as {string}")
+	public void user_login_to_homepage_to_verify_homepage_as(String Expectedtitle) throws Exception 
+	{
+		addp = new addTobag_Page();
+		//addp.verifyHomePage();
+		Thread.sleep(3000);
+		Assert.assertEquals(Expectedtitle,addp.verifyHomePage());
+	}
+	@When("User click on a product")
+	public void user_click_on_a_product() 
+	{
+	   addp.clickOnAproduct();
+	}
+
+	@When("User click on add to cart")
+	public void user_click_on_add_to_cart() 
+	{
+	    addp.clickaddtocart();
+	}
+
+}

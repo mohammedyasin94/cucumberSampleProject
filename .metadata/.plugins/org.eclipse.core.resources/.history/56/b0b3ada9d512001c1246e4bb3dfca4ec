@@ -1,0 +1,13 @@
+package PageObject;
+
+import org.openqa.selenium.WebDriver;
+
+public class priceLowToHigh_Page 
+{
+	WebDriver driver;
+	public priceLowToHigh_Page(WebDriver driver)
+	{
+		this.driver=driver;
+	}
+
+}

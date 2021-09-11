@@ -1,0 +1,16 @@
+package PageObject;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class loginPage {
+	WebDriver driver;
+	String url="https://www.saucedemo.com/";
+	By userName= By.xpath("//input[@id='user-name']");
+	public void driver()
+	{
+		
+	}
+	
+
+}

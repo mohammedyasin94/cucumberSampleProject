@@ -1,0 +1,12 @@
+Feature: Swag bags
+
+  Scenario Outline: Login function
+    Given Open browser
+    When I input "<userName>" and "<password>"
+    Then Driver Close
+
+    Examples:
+    	| userName									| password 		 |
+    	| standard_user							|	secret_sauce |
+    	| problem_user							|	secret_sauce |
+    	| performance_glitch_user		|	secret_sauce |

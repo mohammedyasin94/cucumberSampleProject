@@ -1,0 +1,13 @@
+package PageObject;
+
+import org.openqa.selenium.WebDriver;
+
+public class order_Page 
+{
+	WebDriver driver;
+	public order_Page(WebDriver driver)
+	{
+		this.driver=driver;
+	}
+
+}

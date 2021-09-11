@@ -1,0 +1,9 @@
+Feature: Swag bags
+  Scenario: Login functionality
+    Given Open browser
+    And Maximize
+    When I input username and password
+    And Click login button
+    And Get title
+    Then Print title
+    And Driver close

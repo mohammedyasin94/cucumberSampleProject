@@ -1,0 +1,16 @@
+Feature: Swag Labs
+
+  Scenario Outline: Login function
+    Given Open browser with "https://www.saucedemo.com/"
+    When I input "<userName>" and "<password>"
+    Then Driver Close
+
+    Examples:
+    	| userName								| password 		 |
+    	| standard_user							|	secret_sauce |
+   Scenario: Add to cart function
+   	Given User login to homepage to verify homepage
+   	When User click on product
+   	And User click on add to cart
+   	Then Driver Close
+   	
